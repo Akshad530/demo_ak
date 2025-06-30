@@ -1,0 +1,1864 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Guide</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      left: -220px; /* Start off screen */
+      top: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: 	#0A0A0A;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      animation: slideIn 1s forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        left: 0;
+      }
+    }
+
+    .sidebar h2 {
+      color: white;
+      margin-bottom: 30px;
+      font-size: 24px;
+      opacity: 0;
+      animation: fadeIn 1.2s forwards;
+      animation-delay: 1s;
+    }
+
+    .sidebar a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      margin: 12px 0;
+      width: 100%;
+      text-align: center;
+      padding: 12px 0;
+      transition: background 0.3s, transform 0.2s;
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+
+    .sidebar a:nth-child(2) { animation-delay: 1.3s; }
+    .sidebar a:nth-child(3) { animation-delay: 1.4s; }
+    .sidebar a:nth-child(4) { animation-delay: 1.5s; }
+    .sidebar a:nth-child(5) { animation-delay: 1.6s; }
+    .sidebar a:nth-child(6) { animation-delay: 1.7s; }
+
+    .sidebar a:hover {
+      background-color: #34495E;
+      transform: translateX(5px);
+    }
+
+    /* Content */
+    .content {
+      margin-left: 220px;
+      padding: 40px;
+    }
+
+    /* Banner */
+    .header-banner {
+      background-image: url("technology-computer-creative-design-thumbnail.jpg");
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .header-banner h1 {
+      font-size: 48px;
+      color: white;
+      padding: 20px;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards;
+    }
+
+    p {
+      font-size: 20px;
+      text-align: center;
+      margin: 25px 0;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1.2s ease forwards;
+      animation-delay: 1s;
+    }
+
+    b {
+      font-size: 22px;
+      color: #000;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+        animation: none;
+        left: 0;
+      }
+
+      .content {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .header-banner h1 {
+        font-size: 32px;
+        padding: 10px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="hom.html">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="content">
+    <div class="header-banner" id="home">
+      <h1>How to Create a Website Using HTML and CSS</h1>
+    </div>
+
+    <p id="about">
+      While it is easy to select and share your pictures on social media, an Instagram portfolio
+      won't hold up in the long run. We can't deny that a well-optimised profile gets attention,
+      but getting clients and proving your professional ability needs much more than a social media portfolio.
+    </p>
+
+    <p>
+      So, here are three reasons why every photographer needs a website:
+    </p>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Points - Animated & Aligned</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      padding: 40px;
+      margin: 0;
+      color: #222;
+    }
+
+    .points-container {
+      max-width: 800px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .point {
+      padding: 25px;
+      border-left: 5px solid #0A0A0A;
+      background: #f9f9f9;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .point:nth-child(1) { animation-delay: 0.2s; }
+    .point:nth-child(2) { animation-delay: 0.4s; }
+    .point:nth-child(3) { animation-delay: 0.6s; }
+
+    .point h3 {
+      font-size: 22px;
+      color: #0A0A0A;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .point p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #444;
+      margin: 0;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+      }
+
+      .point h3 {
+        font-size: 20px;
+      }
+
+      .point p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="points-container">
+
+    <div class="point">
+      <h3><b>Undivided Attention :-</b></h3>
+      <p>Unlike social media, a website solely belongs to you and only has your content on it. So, visitors and potential clients
+        can give their undivided attention to your work without distractions.</p>
+    </div>
+
+    <div class="point">
+      <h3><b>Credibility :-</b></h3>
+      <p>A website for your photography business instantly makes you look professional over your competitors. It also builds trust and increases revenue over time.</p>
+    </div>
+
+    <div class="point">
+      <h3><b>Extra Income :-</b></h3>
+      <p>Photography websites or any type of website for that matter can be used as a source of extra income apart from your business.
+        On a photography website, you can start with writing photography blogs, and even roll out ads.</p>
+    </div>
+
+    <div>
+      <b></b>
+      <p>Another option is to sell your photographs for print or for stock companies. This way, you can make that extra passive income while you work on your business. With that said, let's get to business!</p>
+    </div>
+  </div>
+<h1 style="font-size:30px ;text-align: left;">How to Create a Photography Website with WordPress</h1>
+<p>By the end of this article, you will be able to create a Photography website with WordPress like this in 4 simple steps.
+  The very first step in creating a photography website, or any type of website for that matter, is to get the domain and hosting. A domain is the name of your website that people use to access your website, and hosting is where your website’s files are stored. And choosing the right domain for your website improves credibility and builds brand value over time.</p>
+  <h1 style="font-size:30px ;">But, How to choose a Domain name?</h1>
+<p>Having a unique and memorable domain name shows that you are a professional and you mean business. Here is how you can choose the right domain name,</p>
+
+
+  <ul style="font-size: 20px;">
+    <li >
+      <b style="font-size: 20px;">Make it Short & Simple:</b> Make sure to have a short and unique domain name so that it becomes memorable in the long run.
+    </li>
+  </ul>
+  <h1 style="margin-top: 20px;"></h1>
+  <ul style="font-size: 20px;">
+    <li >
+      <b style="font-size: 20px;">Use popular domain extensions :</b>  It is recommended to stick with the popular domain extensions, in the likes of .com, .org, or even .net
+    </li>
+  </ul>
+  <h1 style="margin-top: 20px;"></h1>
+  <ul style="font-size: 20px;">
+    <li >
+      <b style="font-size: 20px;">Be prepared with alternatives :</b>   The domain name you wish for may not always be available. So, it is wise to be prepared with some other domain name options.
+    </li>
+  </ul>
+  <h1 style="margin-top: 30px;"></h1>
+<h1 style="font-size: 35px;text-align: center;">The Most Common HTML Tags</h1>
+<h1 style="margin-top: 30px;"></h1>
+<div class="html-tags-section">
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>HTML Tags Explanation</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: white;
+        color: #333;
+        padding: 40px 20px;
+      }
+  
+      .html-tags-section {
+        max-width: 850px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+  
+      .tag-block {
+        background-color: #f9f9f9;
+        border-left: 5px solid #0A0A0A;
+        padding: 25px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        border-radius: 6px;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 1s ease forwards;
+      }
+  
+      .tag-block h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+      }
+  
+      .tag-block p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+  
+      .tag-block code {
+        background-color: #eee;
+        padding: 3px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+      }
+  
+      .images {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+  
+      .images img {
+        width: 100%;
+        max-width: 700px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+  
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      @media (max-width: 600px) {
+        .tag-block h2 {
+          font-size: 24px;
+        }
+        .tag-block p {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div class="html-tags-section">
+  
+      <div class="tag-block">
+        <h2>Link Tag</h2>
+        <p>The <code>&lt;a&gt;</code> tag (called anchor tag) lets you create links. A simple link looks like this:</p>
+        
+          <img src="mo.PNG">
+        
+<div style="text-align: center;">
+  <a href="https://www.muo.com" style="font-size: 20px; text-decoration: none; color: blue;">
+    Go to Site
+  </a>
+</div>
+
+      </div>
+  
+      <div class="tag-block">
+        <h2>Break Tag</h2>
+        <p>The <code>&lt;br&gt;</code> tag inserts a line break. It looks like this:</p>
+        <img src="p.PNG">
+      </div>
+      <div class="video-tag-section fade-up">
+        <div class="tag-block">
+          <h2>Video in Document</h2>
+        <p style="font-size: 20px;">
+          The <code>&lt;video&gt;</code> element is used to show a video on a web page.
+          The <code>&lt;source&gt;</code> element allows you to specify alternative video files
+          which the browser may choose from. The browser will use the first recognized format.
+          The <code>controls</code> attribute adds video controls like play, pause, and volume.
+        </p>
+      <img src="bi.PNG" alt="">
+      <div style="text-align: center;">
+      <a href="https://www.google.com/search?q=video+for+bird+macow&sca_esv=2d13d23ad97c2b00&biw=1821&bih=876&sxsrf=AE3TifNwk-bIZWhj0uUgBTm0h5q1gvDqSg%3A1751114457658&ei=2eJfaLr6J_eNvr0PyKiHoQo&ved=0ahUKEwj6ytbZkZSOAxX3hq8BHUjUIaQQ4dUDCBA&uact=5&oq=video+for+bird+macow&gs_lp=Egxnd3Mtd2l6LXNlcnAiFHZpZGVvIGZvciBiaXJkIG1hY293MgcQIRigARgKMgcQIRigARgKMgcQIRigARgKSOUuUPMJWMctcAF4AZABAJgB-AGgAdkHqgEFMC40LjG4AQPIAQD4AQGYAgagAqQIwgIKEAAYsAMY1gQYR8ICBhAAGBYYHsICCxAAGIAEGIYDGIoFwgIFEAAY7wXCAggQABiiBBiJBcICBRAhGKABwgIFECEYnwWYAwCIBgGQBgiSBwUxLjIuM6AHthyyBwUwLjIuM7gHngjCBwUyLTMuM8gHPA&sclient=gws-wiz-serp#fpstate=ive&vld=cid:e010d47b,vid:Ivwqnc_6MCo,st:0" style="font-size: 20px; text-decoration: none; color: blue;text-align: center;">
+        Watch
+      </div>
+      </a>
+      </div>
+      
+      <div class="tag-block fade-up" style="margin-top: 30px;">
+        <div class="heading-tag-section">
+          <h2 style="font-size: 30px;">Title Tags</h2>
+      
+          <p style="font-size: 20px;">
+            The <code>&lt;h1&gt;</code> tag defines a level-one header on your page. This is usually the main title of your page,
+            and it's recommended to use only one <code>&lt;h1&gt;</code> per page for SEO and accessibility.
+          </p>
+      
+          <p style="font-size: 20px; margin-top: 30px;">
+            The <code>&lt;h2&gt;</code> tag defines level-two headings such as section headers.
+            Similarly, <code>&lt;h3&gt;</code> to <code>&lt;h6&gt;</code> define progressively smaller subheadings.
+            For example, the tag names used in this tutorial would typically be marked with <code>&lt;h2&gt;</code> headings.
+          </p>
+      
+          <img src="ti.PNG" alt="">
+          <h1 style="margin-bottom: 30px;"></h1>
+          <img src="he.PNG" alt="">
+        </div>
+      </div>
+      
+      <div class="tag-block fade-up" style="margin-top: 30px;">
+        <h2 style="font-size: 30px;">Italic Text Tag</h2>
+      
+        <p style="font-size: 20px;">
+          The <code>&lt;i&gt;</code> tag defines text that is typically displayed in <em>italic</em>.
+          It is often used to indicate a technical term, a phrase from another language, or a thought.
+        </p>
+      
+        <p style="font-size: 20px;">
+          Although the default display is italic, you can change the appearance of <code>&lt;i&gt;</code> text using CSS
+          to apply other styles such as different colors, fonts, or weights.
+        </p>
+      
+        <p style="font-size: 20px;">
+          Example: <i>This text is italic using the &lt;i&gt; tag.</i>
+        </p>
+        <img src="ita.PNG" alt="">
+      </div>
+      <div class="tag-block fade-up" style="margin-top: 30px; text-align: left;">
+
+        <h2 style="font-size: 30px;">Image Tag in HTML</h2>
+      
+        <p style="font-size: 20px;">
+          If you want to embed an image in your page, you'll need to use the <code>&lt;img&gt;</code> tag.
+          You'll normally use it in conjunction with the <code>src</code> attribute. This specifies the source of the image, like this:
+        </p>
+      
+<img src="img.PNG" alt=""; style="margin-bottom: 20px;">
+
+<img src="bi.PNG" alt="">
+
+
+             
+      </div>
+      <div class="tag-block fade-up" style="margin-top: 30px; text-align: left;">
+
+        <h2 style="font-size: 30px;">Paragraph Tag</h2>
+      
+        <p style="font-size: 20px;">
+          The <code>&lt;p&gt;</code> tag starts a new paragraph. This usually inserts two line breaks by default.
+        </p>
+      
+        <p style="font-size: 20px;">
+          Look, for example, at the break between the previous line and this one. That’s what a <code>&lt;p&gt;</code> tag will do — start a new paragraph with vertical spacing for readability.
+        </p>
+      <img src="para.PNG" alt=""; style="margin-bottom: 30px;">
+      <img src="paraex.PNG" alt="">
+      </div>
+      <div class="tag-block fade-up" style="margin-top: 30px; text-align: left;">
+        <h2 style="font-size: 30px;">Style Part of Text</h2>
+      
+        <p style="font-size: 20px;">
+          The <code>&lt;a&gt;</code> tag is an inline container used to mark up a part of a text, or a part of a document.
+        </p>
+        <img src="style.PNG" alt=""; style="margin-bottom: 30px;">
+        <img src="stylebl.PNG" alt="">
+      </div>
+      <div class="tag-block fade-up" style="margin-top: 30px; text-align: left;">
+        <h2 style="font-size: 30px;">Ordered List</h2>
+      
+        <p style="font-size: 20px;">
+          The <code>&lt;ol&gt;</code> tag lets you create an ordered list. In general, that means you'll get a numbered list.
+          Each item in the list needs a list item tag (<code>&lt;li&gt;</code>), so your list will look like this:
+        </p>
+        <img src="order.PNG" alt=""; style="margin-bottom: 30px;">
+        <img src="orderlist.PNG" alt="">
+      </div>
+      <div class="tag-block fade-up" style="margin-top: 30px; text-align: left;">
+        <h2 style="font-size: 30px;">Unordered List</h2>
+      
+        <p style="font-size: 20px;">
+          The unordered list is much simpler than its ordered counterpart. It's simply a bulleted list.
+        </p>
+        <img src="bullet.PNG" alt=""; style="margin-bottom: 30px;">
+        <img src="bull.PNG" alt="">
+      </div>
+      <div class="tag-block fade-up" style="margin-top: 30px; text-align: left;">
+        <h2 style="font-size: 30px;">Unordered List</h2>
+      
+        <p style="font-size: 20px;">
+          The unordered list is much simpler than its ordered counterpart. It's simply a bulleted list.
+        </p>
+        <img src="uno.PNG" alt=""; style="margin-bottom: 20px;">
+      <img src="un.PNG" alt="">
+ </div >
+ <h1 style="margin-bottom: 40px;"></h1>
+ <h1 style="font-size: 30px;text-align: left;">How to Create a Photography Website with WordPress</h1>
+ <h1 style="margin-bottom: 20px;"></h1>
+ <p>By the end of this article, you will be able to create a Photography website with WordPress like this in 4 simple steps.<br>
+
+  The very first step in creating a photography website, or any type of website for that matter, is to get the domain and hosting. A domain is the name of your website that people use to access your website, and hosting is where your website's files are stored. And choosing the right domain for your website improves credibility and builds brand value over time.</p>
+  <h1 style="margin-bottom: 20px;"></h1>
+  <h1 style="font-size: 30px;text-align:left;">But, How to choose a Domain name?</h1>
+  
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Domain Name Tips</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: white;
+        color: #222;
+        padding: 40px 20px;
+      }
+  
+      .domain-name-tips {
+        max-width: 850px;
+        margin: auto;
+        opacity: 0;
+        animation: fadeIn 1.5s ease-in-out forwards;
+      }
+  
+      .domain-name-tips h2 {
+        font-size: 30px;
+        color: #2c3e50;
+        margin-bottom: 20px;
+        animation: fadeUp 1s ease-in-out forwards;
+      }
+  
+      .domain-name-tips p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+  
+      .domain-name-tips ul {
+        padding-left: 20px;
+      }
+  
+      .domain-name-tips li {
+        font-size: 18px;
+        margin-bottom: 12px;
+        line-height: 1.6;
+      }
+  
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+  
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      @media (max-width: 600px) {
+        .domain-name-tips h2 {
+          font-size: 24px;
+        }
+        .domain-name-tips p, .domain-name-tips li {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div class="domain-name-tips">
+    =
+      <p>Having a unique and memorable domain name shows that you are a professional and you mean business. Here is how you can choose the right domain name:</p>
+  
+      <ul>
+        <li><strong>Make it Short & Simple:</strong> Ensure your domain name is short and unique so that it becomes memorable in the long run.</li>
+        <li><strong>Use Popular Domain Extensions:</strong> Stick to extensions like <code>.com</code>, <code>.org</code>, or <code>.net</code> for credibility.</li>
+        <li><strong>Be Prepared with Alternatives:</strong> Your first choice may not always be available, so have backups ready.</li>
+      </ul>
+    </div>
+    <h1 style="margin-bottom: 30px;"></h1>
+  <h1 style="font-size: 30px;text-align: center;">The Most Common CSS Styles</h1>
+  <h1 style="margin-bottom: 30px;"></h1>
+  </body>
+  </html>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Margin Explanation</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      color: #000;
+    }
+
+    .margin-box {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-left: 6px solid #000000; /* ONLY left line black */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      animation: fadeUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .margin-box h2 {
+      font-size: 32px;
+      color: #000;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .margin-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .margin-box {
+        padding: 20px;
+      }
+      .margin-box h2 {
+        font-size: 26px;
+      }
+      .margin-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1 style="margin-bottom: 30px;"></h1>
+  <div class="margin-box">
+    <h2>Margin</h2>
+    <p>
+      The <code>margin-top</code> CSS property sets the margin area on the top of an element.
+      A positive value places it farther from its neighbors, while a negative value places it closer.
+    </p>
+    <img src="marg.PNG" alt="">
+    <h1 style="margin-bottom: 30px;"></h1>
+    <img src="margex.PNG" alt="">
+
+</body>
+</html>
+
+
+
+
+
+
+
+</body>
+  </html>
+  
+  </div>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Padding Explanation</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #ffffff;
+        margin: 0;
+        padding: 40px 20px;
+        color: #000;
+      }
+  
+      .padding-box {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-left: 6px solid #000000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+        animation: fadeUp 1.2s ease forwards;
+        opacity: 0;
+      }
+  
+      .padding-box h2 {
+        font-size: 32px;
+        color: #000;
+        margin-bottom: 20px;
+        animation: fadeIn 1s ease forwards;
+      }
+  
+      .padding-box p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #222;
+      }
+  
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+  
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+  
+      @media (max-width: 600px) {
+        .padding-box {
+          padding: 20px;
+        }
+        .padding-box h2 {
+          font-size: 26px;
+        }
+        .padding-box p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div class="padding-box">
+      <h2>Padding</h2>
+      <p>
+        The <code>padding-top</code> CSS property sets the height of the padding area on the top of an element.
+      </p>
+      <img src="pad.PNG" alt="">
+      <h1 style="margin-bottom: 30px;"></h1>
+      <img src="padex.PNG" alt="">
+    </div>
+  
+  </body>
+  </html>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Align</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      color: #000;
+    }
+
+    .text-align-box {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-left: 6px solid #000000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      animation: fadeUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .text-align-box h2 {
+      font-size: 32px;
+      color: #000;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .text-align-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .text-align-box {
+        padding: 20px;
+      }
+      .text-align-box h2 {
+        font-size: 26px;
+      }
+      .text-align-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="text-align-box">
+    <h2>Text Align</h2>
+    <p>
+      The <code>text-align</code> CSS property sets the horizontal alignment of the content inside a block element or table-cell box.
+      This means it works like <i>vertical-align</i> but in the horizontal direction.
+    </p>
+    <img src="textal.PNG" alt="">
+    <h1 style="margin-bottom: 30px;"></h1>
+    <img src="textalex.PNG" alt="">
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Font Size</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      color: #000;
+    }
+
+    .font-size-box {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-left: 6px solid #000000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      animation: fadeUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .font-size-box h2 {
+      font-size: 32px;
+      color: #000;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .font-size-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .font-size-box {
+        padding: 20px;
+      }
+      .font-size-box h2 {
+        font-size: 26px;
+      }
+      .font-size-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="font-size-box">
+    <h2>Font Size</h2>
+    <p>
+      The <code>font-size</code> CSS property sets the size of the font. Changing the font size also updates the sizes of the
+      font size-relative units, such as <code>em</code>, <code>ex</code>, and so forth.
+    </p>
+    <img src="font.PNG" alt="">
+    <h1 style="margin-bottom: 30px;"></h1>
+    <img src="fontex.PNG" alt="">
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Color</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      color: #000;
+    }
+
+    .background-color-box {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-left: 6px solid #000000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      animation: fadeUp 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    .background-color-box h2 {
+      font-size: 32px;
+      color: #000;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .background-color-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .background-color-box {
+        padding: 20px;
+      }
+      .background-color-box h2 {
+        font-size: 26px;
+      }
+      .background-color-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-color-box">
+    <h2>Background Color</h2>
+    <p>
+      The <code>background-color</code> CSS property sets the background color of an element.
+    </p>
+    <img src="background.PNG" alt="">
+    <h1 style="margin-bottom: 30px;"></h1>
+    <img src="ba.PNG" alt="">
+
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Color</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      padding: 40px 20px;
+      margin: 0;
+      color: #000;
+    }
+
+    .color-box {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #f8f8f8;
+      border-left: 6px solid #333;
+      border-radius: 8px;
+      text-align: center;
+      animation: slideFade 1.2s ease forwards;
+      opacity: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .color-box h2 {
+      font-size: 32px;
+      color: #000;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .color-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    @keyframes slideFade {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .color-box {
+        padding: 20px;
+      }
+
+      .color-box h2 {
+        font-size: 26px;
+      }
+
+      .color-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="color-box">
+    <h2>Color</h2>
+    <p>
+      The <code>color</code> CSS property sets the foreground color value of an element's text and text decorations.
+      It also accepts the keyword <code>currentcolor</code>, which can be reused for other color-related properties
+      like <code>border-color</code>.
+    </p>
+    <img src="col.PNG" alt="">
+    <h1 style="margin-bottom: 30px;"></h1>
+    <img src="clor.PNG" alt="">
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Width</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      color: #000;
+    }
+
+    .width-box {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #f0f0f0;
+      border-left: 6px solid #222;
+      border-radius: 10px;
+      text-align: center;
+      animation: slideInFade 1.2s ease forwards;
+      opacity: 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .width-box h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .width-box p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    @keyframes slideInFade {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .width-box {
+        padding: 20px;
+      }
+
+      .width-box h2 {
+        font-size: 26px;
+      }
+
+      .width-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="width-box">
+    <h2>Width</h2>
+    <p>
+      The <code>width</code> CSS property sets an element's width. By default, it defines the width of the content area. However, if <code>box-sizing</code> is set to <code>border-box</code>, it includes padding and border in the total width.
+    </p>
+    <img src="width.PNG" alt="">
+    <h1 style="margin-bottom: 30px;"></h1>
+    <img src="widthex.PNG" alt="">
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Line Height</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      color: #000;
+    }
+
+    .lineheight-box {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #f9f9f9;
+      border-left: 6px solid #222;
+      border-radius: 10px;
+      text-align: center;
+      animation: slideInFade 1.2s ease forwards;
+      opacity: 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .lineheight-box h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .lineheight-box p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    @keyframes slideInFade {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .lineheight-box {
+        padding: 20px;
+      }
+
+      .lineheight-box h2 {
+        font-size: 26px;
+      }
+
+      .lineheight-box p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lineheight-box">
+    <h2>Line Height</h2>
+    <p>
+      The <code>line-height</code> CSS property sets the amount of space used for lines of text. It helps improve readability by controlling the spacing between baselines of consecutive lines. This is especially useful when styling paragraphs or lists.
+    </p>
+    <img src="lh.PNG" alt="">
+    <h1 style="margin-bottom: 30px;"></h1>
+    <img src="lhex.PNG" alt="">
+  </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inline vs Block Elements</title>
+  <h1 style="margin-bottom: 30px;"></h1>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #222;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .comparison-table {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      animation: slideIn 1.2s ease forwards;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+      background: #f9f9f9;
+      border-left: 6px solid #000;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .column h3 {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #0A0A0A;
+    }
+
+    .column p {
+      text-align: center;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      font-size: 18px;
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .comparison-table {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Inline vs Block-Level Elements in HTML</h2>
+
+  <div class="comparison-table">
+    <div class="column">
+      <h3>Inline Elements</h3>
+      <p>(Centering Not Supported)</p>
+      <ul>
+        <li>Link Tag — <code>&lt;a&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Image Tag — <code>&lt;img&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Video Tag — <code>&lt;video&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Bold Tag — <code>&lt;b&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Break Tag — <code>&lt;br&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Italic Tag — <code>&lt;i&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Span Tag — <code>&lt;span&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Button Tag — <code>&lt;button&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Emphasis Tag — <code>&lt;em&gt;</code></li>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h3>Block-Level Elements</h3>
+      <p>(Centering Supported)</p>
+      <ul>
+        <li>Division Tag — <code>&lt;div&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Heading Tags — <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Paragraph Tag — <code>&lt;p&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Horizontal Rule — <code>&lt;hr&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Unordered List — <code>&lt;ul&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>Ordered List — <code>&lt;ol&gt;</code></li>
+        <h1 style="margin-bottom: 10px;"></h1>
+        <li>List Item — <code>&lt;li&gt;</code></li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
+
+</div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Black Sidebar</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      color: #080808 ;
+    }
+
+
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f6f8;
+      color: #fff;
+      display: flex;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background: linear-gradient(135deg, #1e1f26, #2c3e50);
+      padding-top: 40px;
+      box-shadow: 2px 0 20px rgba(0, 255, 255, 0.2);
+      transform: translateX(-100%);
+      animation: slideIn 0.6s ease-out forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      color: #00fff7;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      padding: 15px 30px;
+      margin: 10px 20px;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+      background: transparent;
+      position: relative;
+    }
+
+    .sidebar a:hover {
+      background: #00fff7;
+      color: #000;
+      box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+      transform: scale(1.05);
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 40px;
+      color: #333;
+      flex: 1;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        animation: none;
+        transform: translateX(0);
+      }
+
+      .content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>☰ Menu</h2>
+    <a href="e.html"><i class="fas fa-home"></i> Home</a>
+    <a href="abo.html"><i class="fas fa-user"></i> About</a>
+    <a href="ser.html"><i class="fas fa-cogs"></i> Services</a>
+    <a href="pro.html"><i class="fas fa-briefcase"></i> Projects</a>
+    <a href="cont.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="log.html"><i class="fas fa-envelope"></i> Login</a>
+  </div>
+
+  <div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>This is a modern sidebar design with glowing animation. You can navigate through different sections using the links in the sidebar.</p>
+  </div>
+
+</body>
+</html>
+
+
+</body>
+</html>
+<h1 style="margin-bottom: 50px;"></h1>
+      
+    
+      
+  </div>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Email Subscribe Section</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #fff;
+        color: #000000;
+      }
+  
+      .subscribe-section {
+        background: #ffe08a;
+        text-align: center;
+        padding: 80px 20px 40px;
+      }
+  
+      .subscribe-section h1 {
+        font-size: 36px;
+        color: white;
+        margin-bottom: 30px;
+      }
+  
+      .input-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+  
+      .input-box input {
+        flex: 1;
+        padding: 15px 20px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+      }
+  
+      .input-box .error-icon {
+        padding: 0 10px;
+        color: red;
+        font-size: 20px;
+      }
+  
+      .input-box button {
+        background-color: #00cc99;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+  
+      .input-box button:hover {
+        background-color: #009973;
+      }
+  
+      .cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 40px 20px;
+        gap: 20px;
+      }
+  
+      .card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        padding: 20px;
+        width: 300px;
+        text-align: left;
+      }
+  
+      .card h3 {
+        margin-top: 0;
+        font-size: 22px;
+        color: #111;
+      }
+  
+      .card p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+      }
+  
+      .card a {
+        text-decoration: none;
+        color: #00cc99;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
+      }
+  
+      .card a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <div class="subscribe-section">
+      <h1 style="size: 40px;">Get New Videos In Your Inbox</h1>
+      <div class="input-box">
+        <input type="email" placeholder="Email" />
+        <span class="error-icon"></span>
+        <button>Subscribe</button>
+      </div>
+    </div>
+  
+    <div class="cards">
+      <div class="card">
+        <h3>WordPress Course</h3>
+        <p>
+          Do you want to learn WordPress to build any kind of website you want?
+          Then this is the only course you need to take.
+        </p>
+        <a href="https://websitelearners.com/courses/">View Course →</a>
+      </div>
+  
+      <div class="card">
+        <h3>Beginner's Guide to SEO</h3>
+        <p>
+          SEO isn't as difficult as you might think. Learn how to start growing
+          organic traffic to your website with our easy to follow video.
+        </p>
+        <a href="https://www.youtube.com/websitelearners">Watch Video →</a>
+      </div>
+    </div>
+  
+ 
+  
+  
+ 
+    </div>
+  
+  </body>
+
+
+</body>
+</html>
+<footer style="background-color: #f7faff; padding: 40px 20px; font-family: Arial, sans-serif; color: #333;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
+
+    <!-- Logo + Copyright -->
+    <div style="flex: 1 1 250px; margin: 10px;">
+      <h2 style="font-weight: 400;"><span style="color: black;">HTML</span><span style="color: #00c896; font-weight: bold;">Guide</span></h2>
+      <p>2025 © All rights reserved.</p>
+      <div style="margin-top: 20px;">
+        <a href="https://wa.me/" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="32" style="margin: 5px;"></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="32" style="margin: 5px;"></a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" width="32" style="margin: 5px;"></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733646.png" alt="YouTube" width="32" style="margin: 5px;"></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" width="32" style="margin: 5px;"></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/145/145807.png" alt="LinkedIn" width="32" style="margin: 5px;"></a>
+      </div>
+    </div>
+
+    <!-- Resources -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: #2c3e50;">Resources</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="https://websitelearners.com/tools-we-recommend/" target="_blank" style="color: #34495e; text-decoration: none;">Tools we recommend</a></li>
+        <li><a href="https://websitelearners.com/about/" target="_blank" style="color: #34495e; text-decoration: none;">About Us</a></li>
+        <li><a href="https://websitelearners.com/careers/" target="_blank" style="color: #34495e; text-decoration: none;">Careers @ WL</a></li>
+        <li><a href="https://websitelearners.com/terms/" target="_blank" style="color: #34495e; text-decoration: none;">Terms of Service</a></li>
+        <li><a href="https://websitelearners.com/privacy/" target="_blank" style="color: #34495e; text-decoration: none;">Privacy Policy</a></li>
+        <li><a href="https://websitelearners.com/contact/" target="_blank" style="color: #34495e; text-decoration: none;">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Website Build Guides -->
+    <div style="flex: 1 1 200px; margin: 10px;">
+      <h3 style="color: #2c3e50;">Website Build Guides</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="https://websitelearners.com/make-a-website/" target="_blank" style="color: #34495e; text-decoration: none;">Making a Website</a></li>
+        <li><a href="https://websitelearners.com/make-a-blog/" target="_blank" style="color: #34495e; text-decoration: none;">Make a Blog</a></li>
+        <li><a href="https://websitelearners.com/ecommerce-website/" target="_blank" style="color: #34495e; text-decoration: none;">E-Commerce Website</a></li>
+        <li><a href="https://websitelearners.com/make-divi-website/" target="_blank" style="color: #34495e; text-decoration: none;">Making a Divi Website</a></li>
+      </ul>
+    </div>
+
+    <!-- Blog -->
+    <div style="flex: 1 1 250px; margin: 10px;">
+      <h1 style="margin-bottom: 30px;"></h1>
+      <h3 style="color: #2c3e50;text-align: center;">From the Blog</h3>
+      <h1 style="margin-bottom: 30px;"></h1>
+      <ul style="list-style: none; padding-left: 0;">
+        
+        <li><a href="https://www.google.com/search?q=5+Best+ChatGPT+Alternatives+in+2023+(Free+and+Paid)&oq=5+Best+ChatGPT+Alternatives+in+2023+(Free+and+Paid)&aqs=chrome..69i57j69i60.744j0j4&sourceid=chrome&ie=UTF-8" target="_blank" style="color: #00c896; text-decoration: none;text-align: center;">5 Best ChatGPT Alternatives in 2023 (Free and Paid)</a></li>
+        <h1 style="margin-bottom: 20px;"></h1>
+        <li><a href="https://websitelearners.com/shopify-vs-makeyourwp/ target="_blank" style="color: #00c896; text-decoration: none;">Shopify Vs MakeYourWP: Choosing the Right Platform</a></li>
+        <h1 style="margin-bottom: 20px;"></h1>
+        <li><a href="https://www.google.com/search?q=%3E5+Best+AI+Content+Generators+for+2023&oq=%3E5+Best+AI+Content+Generators+for+2023&aqs=chrome..69i57j33i10i160l3.888j0j4&sourceid=chrome&ie=UTF-8" target="_blank" style="color: #00c896; text-decoration: none;text-align: center;">5 Best AI Content Generators for 2023</a></li>
+        <h1 style="margin-bottom: 20px;"></h1>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
