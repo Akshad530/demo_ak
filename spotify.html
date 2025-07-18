@@ -1,0 +1,146 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify- Your favourite music is here</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="spot.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li class="brand"><img src="Spotify-Icon-Logo.wine.svg" alt="">Spotify</li>
+        </ul>
+    
+        <ul class="home">
+            <li>Home</li>
+            <li>Contact</li>
+            <li>Documentation</li>
+            <li>
+                <li>
+                    <a href="signup.html" class="nav-btn">Sign Up</a>
+
+                </li>
+                
+
+            </li>
+            
+              
+
+        </ul>
+        <div id="signup-form" class="form-section" style="display: none;">
+            <div class="form-box">
+                <h2>Create Account</h2>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+        </div>
+        
+
+    </nav>
+    <div id="signup-form" class="form-section" style="display: none;">
+        <div class="form-box">
+            <h2>Create Account</h2>
+            <input type="text" id="signup-name" placeholder="Full Name" required>
+            <input type="email" id="signup-email" placeholder="Email Address" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button onclick="submitSignup()" class="signup-btn">Sign Up</button>
+            <p id="signup-message" class="message"></p>
+        </div>
+    </div>
+    
+    
+    <div class="container">
+        <h1>Best of NCS - No Copyright Sounds</h1>
+        <div class="black-box">
+            <!-- Audio for Sapphire -->
+<audio id="audio-sapphire" src="https://raag.fm/files/mp3/128/English/29679/Sapphire%20-%20(Raag.Fm).mp3"></audio>
+
+<!-- Audio for Survive -->
+<audio id="audio-survive" src="Survive King Of The Streets 128 Kbps.mp3"></audio>
+
+<!-- Audio for Emerald -->
+
+
+
+<audio id="audio-jindagi" src="Ed-Sheeran-Sapphire-(HipHopKit.com).mp3"></audio>
+<audio id="audio-kamelya" src="Ve Kamleya-(Mr-Jat.in).mp3"></audio>
+
+
+            <div class="image-overlay-container">
+                <img src="cartoon-vector-illustration-black-teenager-boy-listening-music_1324823-13354.avif" 
+                     alt="Boy Listening to Music" 
+                     class="boyimg">
+        
+                <div class="songlist-overlay">
+                    <!-- Song 1 -->
+             <!-- Song 1 -->
+<!-- Song 1 -->
+<div class="song-entry">
+    <img src="hq720.jpg" class="song-img">
+    <span class="song-title">Sapphire</span>
+    <i class="ri-play-circle-fill play-button" data-audio="audio-sapphire"></i>
+    <span class="song-timer">05:34</span>
+</div>
+
+<!-- Song 2 -->
+<div class="song-entry">
+    <img src="artworks-uYpVVOW3YKsSbkAq-OWZmHQ-t500x500.jpg" class="song-img">
+    <span class="song-title">Survive</span>
+    <i class="ri-play-circle-fill play-button" data-audio="audio-survive"></i>
+    <span class="song-timer">03:45</span>
+</div>
+
+<!-- Song 3 -->
+<div class="song-entry">
+    <img src="jin.jpg" class="song-img emerald-img">
+    <span class="song-title">Jindagi</span>
+    <i class="ri-play-circle-fill play-button" data-audio="audio-jindagi"></i>
+    <span class="song-timer">03:45</span>
+</div>
+<!-- Audio for Ve Kamleya -->
+<audio id="audio-kamelya" src="Ve Kamleya-(Mr-Jat.in).mp3"></audio>
+
+<!-- Ve Kamleya Song Entry -->
+<div class="song-entry">
+    <img src="ve.jpg" class="song-img emerald-img">
+    <span class="song-title">Ve Kamleya</span>
+    <i class="ri-play-circle-fill play-button" data-audio="audio-kamelya"></i>
+    <span class="song-timer">03:45</span>
+</div>
+
+
+
+
+
+            
+        
+        
+      
+
+        </div>
+        <div class="songlist">
+            <div class="soundbanner">
+
+            </div>
+        </div>
+    </div>
+    <div class="classbottom">
+        <input type="range" name="range" id="MYprogressbar" min="0" max="100">
+        <div class="icons">
+            <i class="ri-speed-fill"></i>
+            <i class="ri-play-circle-fill"></i>
+            <i class="ri-rewind-fill"></i>
+        </div>
+    </div>
+   
+    
+    
+    </div>
+    <script src="sc.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Spotify</title>
+    <link rel="stylesheet" href="spot.css">
+    <style>
+        body {
+            background-color: #121212;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-section {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 20px rgba(30, 215, 96, 0.4);
+            text-align: center;
+        }
+
+        .form-section h2 {
+            color: #1DB954;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .form-section input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background-color: #2a2a2a;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-section input::placeholder {
+            color: #999;
+        }
+
+        .signup-btn {
+            background-color: #1DB954;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            width: 100%;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .signup-btn:hover {
+            background-color: #17a74d;
+        }
+
+        .message {
+            margin-top: 15px;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .message a {
+            color: #1DB954;
+            text-decoration: none;
+        }
+
+        .message a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-section">
+        <h2>Create Your Spotify Account</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <button class="signup-btn">Sign Up</button>
+        <p class="message">Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+</body>
+</html>
